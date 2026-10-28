@@ -1,0 +1,9 @@
+{
+    "server": "http://localhost:9999",
+    "app": "cubey",
+    "branch": "release",
+    "platforms": {
+        "linux-x64": "../cubey26/release/cubey26-linux-x64"
+    },
+    "ignore": ["quick.sh"]
+}

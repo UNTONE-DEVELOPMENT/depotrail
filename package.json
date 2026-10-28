@@ -1,0 +1,22 @@
+{
+  "name": "depotrail",
+  "version": "0.1.1",
+  "description": "Publishes builds to an UNTONE depot",
+  "type": "module",
+  "bin": {
+    "depotrail": "index.js"
+  },
+  "files": [
+    "index.js",
+    "src"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "depot",
+    "publish",
+    "deploy",
+    "updater"
+  ]
+}
