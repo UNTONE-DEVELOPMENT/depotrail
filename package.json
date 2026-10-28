@@ -1,6 +1,6 @@
 {
   "name": "depotrail",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Publishes builds to an UNTONE depot",
   "type": "module",
   "bin": {
@@ -11,7 +11,7 @@
     "src"
   ],
   "engines": {
-    "node": ">=18"
+    "node": ">=20.12"
   },
   "keywords": [
     "depot",

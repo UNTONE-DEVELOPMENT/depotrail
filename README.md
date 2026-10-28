@@ -6,6 +6,8 @@ Publishes builds to an UNTONE depot.
 DEPOT_KEY=... npx depotrail publish 1.2.0
 ```
 
+The key can also live in a `.env` file next to `depot.json` (`DEPOT_KEY=...`), real environment variables take priority.
+
 The version is uploaded as a draft, release it from the partner dashboard afterwards.
 
 ## depot.json

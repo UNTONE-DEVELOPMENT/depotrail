@@ -1,3 +1,4 @@
+import fs from "node:fs";
 import path from "node:path";
 import Command from "./Command.js";
 import Config from "../Config.js";
@@ -11,7 +12,7 @@ import Pool from "../Utils/Pool.js";
 
 export default class Publish extends Command {
     commandName = "publish";
-    helpMessage = "hashes and uploads a build as a new draft version (set DEPOT_KEY, release it in the dashboard after)";
+    helpMessage = "hashes and uploads a build as a new draft version (set DEPOT_KEY or put it in .env, release it in the dashboard after)";
     usage = "depotrail publish <version> [--config depot.json] [--branch name] [--concurrency 4] [--dry-run]";
 
     async Run(args, flags) {
@@ -26,6 +27,12 @@ export default class Publish extends Command {
         }
 
         let dryRun = flags["dry-run"] === true;
+        // picks up DEPOT_KEY from a .env next to the config, real env vars win
+        let envFile = path.join(config.dir, ".env");
+        if (fs.existsSync(envFile)) {
+            process.loadEnvFile(envFile);
+        }
+
         let key = process.env.DEPOT_KEY;
         if (!dryRun && !key) {
             throw new Error("DEPOT_KEY is not set");
